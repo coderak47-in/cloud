@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Sign up</title>
+ <link rel="stylesheet" type="text/css" href="s.css">
+
+ </head>
+ <body background="indian-beach-wallpaper.jpg">
+     <a href=""><font class="h">Home</font></a>
+     <div class="loginbox">
+     <img src="loginimage.png" class="image">
+     <h1>Signup Here</h1>
+     <form action="index" onsubmit="return validation()" method="POST">
+     	<center>
+           <p>Firstname :-
+                   <input type="text" name="" required placeholder="Enter Firstname" id="fname">      
+                  </p>
+          <p>Lastname :-
+                   <input type="text" name="" required placeholder="Enter Lastname" id="lname">
+                  </p>
+          <p>Date of Birth :-
+                 <input type="date" name="" required placeholder="DD/MM/YYYY" id="date">
+              </p>
+              <p>Mobile No. :-
+                 <input type="text" name="" required placeholder="Enter Mobile No." id="mobilenumber">
+              </p>
+           <p>Username. :-
+                 <input type="text" name="" required placeholder="Enter Username." id="user"> 
+  	          </p>
+           <p> Password :-
+                 <input type="password" name="" class="form-control" required placeholder="Enter Password" id="pass" autocomplete="off">
+  	          </p>
+          <p>Re-Enter Password :-
+                 <input type="password" name="" required placeholder="Re-Enter Password" id="conpass">
+              </p>
+              <input type="submit" name="" value="SUBMIT">
+        </center>
+           <a href="login.html">Have an account?</a>
+      </form>
+   </div>
+   <script type="text/javascript">
+
+   	        function validation(){
+   	           var mobilenumber = document.getElementById('mobilenumber').value;
+   	           var password= document.getElementById('pass').value;
+               var confirmpass = document.getElementById('conpass').value;
+
+              if(isNaN(mobilenumber)){
+         		alert("Mobile no. have only digits");
+         		return false;
+         	   }
+              if(mobilenumber.length!=10){
+         		alert("Mobile No. Must Have 10 Digits");
+         		return false;
+         	   }
+              if((password.length <= 6) || (password.length > 15)){
+         		alert("Password length must be between 7 To 15");
+         		return false;
+         	   }	
+              if(confirmpass!=password){
+ 				alert("Passwords not match");
+         		return false;
+ 		   	   }
+ 		   	 }
+   </script>
+  
+</body>
+</html>
